@@ -4,6 +4,33 @@
     <title>芝麻 为Markdown而生</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="./stylesheet.css">
+    <script src="http://libs.useso.com/js/jquery/2.1.1/jquery.js"></script>
+    <script type="text/javascript"> 
+    $(document).ready(function(){
+        $("li.docList-container-item").click(function(){ 
+          if ($(this).hasClass("active") === false){
+            $("li.docList-container-item").removeClass("active");
+            $(this).addClass("active");
+          }
+          else{
+            $(this).removeClass("active");
+            var itemText = $("#editor-container-header").val();
+            $(this).children("div").children("h2").html(itemText);
+          }
+          
+          if($("li.docList-container-item").hasClass("active")){
+              $("#editor").css("visibility","visible");
+              var headerText = $(this).children("div").children("h2").html();
+              $("#editor-container-header").val(headerText);
+          }
+          else{
+              $("#editor").css("visibility","hidden");
+          }
+
+        }
+        )
+    })
+    </script>  
 </head>
 
 <body>
@@ -12,6 +39,9 @@
             <div id="logo">
             <h1>芝麻</h1>
             <p>为Markdown而生</p>
+            </div>
+            <div>
+            <a href="/" class="addButton"><p>+</p></a>
             </div>
         </div>
     </div>
@@ -100,6 +130,25 @@
             </ul>
         </div>
         <hr class="docList-container">
+    </div>
+
+    <div id="editor">
+        <div id="editor-container">
+          <textarea id="editor-container-header">雨后随笔</textarea>
+          <hr>
+          <div id="editor-container-body">
+          <textarea class="editor-container" wrap="virtual" >
+这是一个简单的~文本域~
+写着人们心肠的曲折~
+我想我很快乐~
+当有你的温热~
+脚边的空气转了~
+
+你知道就算大雨将你的城市颠倒~
+我会给你怀抱~
+          </textarea>
+          </div>
+        </div>
     </div>
 </body>
 </html>
