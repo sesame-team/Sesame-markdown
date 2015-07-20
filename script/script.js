@@ -53,5 +53,38 @@ $(document).ready(function(){
         })
 
 
+        /**
+         * 作者：Will
+         * 作用：添加markdown的渲染功能
+         * todo：目前仅仅只是实现功能，需要在后期使用mv*等框架思想重构页面
+         */
+        marked.setOptions({
+            renderer: new marked.Renderer(),
+            gfm: true,
+            tables: true,
+            breaks: false,
+            pedantic: false,
+            sanitize: true,
+            smartLists: true,
+            smartypants: false
+        });
 
+        var MaDe = {};
+        MaDe.Log = [];
+        MaDe.
+        MaDe.markDownArea = $("#editor-container-body-inner-markdown");
+        MaDe.visibleArea  = $("#editor-container-body-inner-visible");
+        MaDe.renderText   = function(e) {
+            var textList = $(this).val()
+                                .split('\n\n');
+            var i, l, text = '';
+
+            for (i = 0, l = textList.length; i < l; i++) {
+                text += marked(textList[i]);
+            }
+
+            MaDe.visibleArea.empty();
+            MaDe.visibleArea.append(text);
+        };
+        MaDe.markDownArea.on('blur', MaDe.renderText);
     })
