@@ -17,14 +17,24 @@
             var itemText = $("#editor-container-header").val();
             $(this).children("div").children("h2").html(itemText);
           }
-          
+
           if($("li.docList-container-item").hasClass("active")){
-              $("#editor").css("visibility","visible");
               var headerText = $(this).children("div").children("h2").html();
+              $("#editor").animate(
+                {marginLeft:"100%"},"fast"
+                );
+              $("#editor").animate(
+                {marginLeft:"37%"},"fast",function(){
               $("#editor-container-header").val(headerText);
+            }
+                );
+              
           }
           else{
-              $("#editor").css("visibility","hidden");
+              $("#editor").animate(
+                {marginLeft:"100%"},"fast"
+                );
+              
           }
 
         }
