@@ -4,7 +4,8 @@
     <title>芝麻 为Markdown而生</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="./stylesheet.css">
-    <script src="http://libs.useso.com/js/jquery/2.1.1/jquery.js"></script>
+    <script src="http://libs.useso.com/js/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://www.bitstorm.org/jquery/color-animation/jquery.animate-colors-min.js"></script>
     <script type="text/javascript"> 
     $(document).ready(function(){
         $("li.docList-container-item").click(function(){ 
@@ -33,12 +34,25 @@
           else{
               $("#editor").animate(
                 {marginLeft:"100%"},"fast"
-                );
-              
-          }
+                );   
+              }
+        })
+        var markdownMode = false;
+        $("#buttonMarked").click(function(){
+          if(markdownMode === false){
+          $("#buttonMarked-Circle").animate({marginLeft:"46px"},"slow",function(){
+            markdownMode = true;
+            })
+          $("#buttonMarked").animate({backgroundColor:"#499ef3"},"slow");
+         }
+         else{
+            $("#buttonMarked-Circle").animate({marginLeft:"0px"},"slow",function(){
+            markdownMode = false;
+            })
+            $("#buttonMarked").animate({backgroundColor:"#CCC"},"slow");
+         }
+        })
 
-        }
-        )
     })
     </script>  
 </head>
@@ -145,6 +159,12 @@
     <div id="editor">
         <div id="editor-container">
           <textarea id="editor-container-header">雨后随笔</textarea>
+
+          <div id="buttonMarked">
+              <div id="buttonMarked-Circle">      
+              </div>
+          </div>
+
           <hr>
           <div id="editor-container-body">
           <textarea class="editor-container" wrap="virtual" >
