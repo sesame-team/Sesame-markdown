@@ -1,0 +1,182 @@
+body{
+	background-color: #a8a8a8;
+	padding: 0px 0px 0px 0px;
+	height:100%; 
+}
+
+*{
+	margin:0px;
+}
+
+#sidebar{
+	height: 100%;
+	width: 7%;
+    background-color:#499ef3; 
+    position: absolute;
+    float: left;
+}
+
+#sidebar-inner{
+    margin-top: 40%;
+    width: 100%;
+    height: 20%;
+    display:inline-block;
+    text-align: center;
+    color: white;
+    font-family: "Microsoft Yahei";
+	font-weight: 200;
+}
+
+a.addButton:link,a.addButton:visited{
+    color: white;
+    text-decoration: none;
+}
+
+#logo p{
+	font-size: 0.7em;
+}
+#logo h1{
+	font-size:2em;
+}
+
+.addButton{
+	margin-top: 15%;
+	font-family: "Microsoft Yahei";
+	font-weight: 800;
+	font-size: 2em;
+}
+
+a.addButton:hover{
+	color: #CCC;
+}
+
+a:hover{
+	color: #BCBCBC;
+}
+
+#sidebar-inner a{
+    margin-top: 250%;
+}
+
+#docList{
+	height: 100%;
+	width: 30%;
+    background-color:white; 
+    float: left;
+    display: inline-block;
+    position: absolute;
+    margin-left: 7%;
+}
+
+h1.docList-header-inner{
+	color:#499ef3;
+	margin-left: 35px;
+	font-family: "Microsoft Yahei";
+	font-weight: 200;
+	margin-top: 50px;
+}
+
+hr{
+	color: #CCC;
+	width: 80%;
+	text-align:right;
+	margin-left:7%;
+	margin-top: 18px;
+}
+
+li.docList-container-item{
+	margin-top: 20px;
+	list-style-type: none;
+}
+
+hr.docList-container{
+	width: 80%;
+	text-align:right;
+	margin-left:7%;
+	margin-top: 18px;
+	border:none;
+	border-top:1px solid #C8C8C8;
+}
+
+li.docList-container-item h2,h4{
+	display: inline;
+	color:#499ef3; 
+	font-family: "Microsoft Yahei";
+	font-weight: 200;
+	font-size: 1.2em;
+}
+
+li.docList-container-item li,a{
+	list-style-type: none;
+	color:#CCC;
+	display: inline-block;
+}
+
+li.docList-container-item ul{
+	text-align: right;
+	margin-right:15%;
+	float: right;
+	margin-top: 5px;
+}
+
+li.docList-container-item div{
+	display: inline;
+}
+
+li.active h2{
+	font-weight: 800;
+}
+
+li.active h4{
+	font-weight: 500;
+}
+
+
+#editor{
+	height:84%;
+	margin-left: 37%;
+	width: 63%;
+	background-color: white;
+	box-shadow: -20px 0px 120px #BBB; 
+	padding-top: 8%;
+	padding-bottom: 8%;
+	position: fixed;
+}
+
+#editor-container{
+	margin-left: 15%;
+	margin-right: 15%;
+	width: 70%;
+	height: 100%;
+}
+
+#editor-container-header{
+	font-size: 2em;
+	font-family:"Microsoft Yahei";
+    font-weight: 500;
+    height: 1.9em;
+    color: #499ef3;
+	border: none;
+	padding: 0px;
+}
+
+#editor-container-body{
+    height: 100%;
+    width: 100%;
+    margin-top: 30px;
+}
+#editor-container hr{
+    margin-top:10px; 
+    margin-left: 0px;
+}
+textarea.editor-container{
+	width: 100%;
+	height: 100%;
+	border: none;
+	padding: 0px;
+	font-family: "Microsoft Yahei";
+	font-size: 1em;
+}
+#editor{
+	visibility:hidden;
+}
