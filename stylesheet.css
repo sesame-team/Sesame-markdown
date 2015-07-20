@@ -87,6 +87,7 @@ hr{
 li.docList-container-item{
 	margin-top: 20px;
 	list-style-type: none;
+	cursor:pointer;
 }
 
 hr.docList-container{
@@ -133,8 +134,8 @@ li.active h4{
 
 
 #editor{
-	height:84%;
-	margin-left: 37%;
+	height:100%;
+	margin-left: 100%;
 	width: 63%;
 	background-color: white;
 	box-shadow: -20px 0px 120px #BBB; 
@@ -168,15 +169,45 @@ li.active h4{
 #editor-container hr{
     margin-top:10px; 
     margin-left: 0px;
+    width: 100%;
 }
-textarea.editor-container{
+
+#editor-container-body-inner-visible{
 	width: 100%;
 	height: 100%;
 	border: none;
-	padding: 0px;
 	font-family: "Microsoft Yahei";
-	font-size: 1em;
+	font-size: 1.5em;
+	display: block;
 }
-#editor{
-	visibility:hidden;
+
+#editor-container-body-inner-markdown{
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-family: "Microsoft Yahei";
+	font-size: 1.5em;
+	display: none;
+}
+
+#buttonMarked{
+	width: 80px;
+	height: 35px;
+	border: 1px solid #CCC;
+	border-radius: 35px;
+	display: inline-block;
+	cursor:pointer;
+	overflow: hidden;
+	background-color: #CCC;
+	float: right;
+}
+
+#buttonMarked-Circle{
+	width: 34px;
+	height: 34px;
+	border: 1px solid #AAA;
+	border-radius: 34px;
+	position: fixed;
+	z-index:1;
+	background-color: white;
 }

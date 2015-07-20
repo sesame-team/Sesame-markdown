@@ -4,33 +4,9 @@
     <title>芝麻 为Markdown而生</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="./stylesheet.css">
-    <script src="http://libs.useso.com/js/jquery/2.1.1/jquery.js"></script>
-    <script type="text/javascript"> 
-    $(document).ready(function(){
-        $("li.docList-container-item").click(function(){ 
-          if ($(this).hasClass("active") === false){
-            $("li.docList-container-item").removeClass("active");
-            $(this).addClass("active");
-          }
-          else{
-            $(this).removeClass("active");
-            var itemText = $("#editor-container-header").val();
-            $(this).children("div").children("h2").html(itemText);
-          }
-          
-          if($("li.docList-container-item").hasClass("active")){
-              $("#editor").css("visibility","visible");
-              var headerText = $(this).children("div").children("h2").html();
-              $("#editor-container-header").val(headerText);
-          }
-          else{
-              $("#editor").css("visibility","hidden");
-          }
-
-        }
-        )
-    })
-    </script>  
+    <script src="http://libs.useso.com/js/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://www.bitstorm.org/jquery/color-animation/jquery.animate-colors-min.js"></script>
+    <script type="text/javascript" src="./script.js"></script>
 </head>
 
 <body>
@@ -134,19 +110,19 @@
 
     <div id="editor">
         <div id="editor-container">
-          <textarea id="editor-container-header">雨后随笔</textarea>
+          <textarea id="editor-container-header"> 雨后随笔</textarea>
+ 
+          <div id="buttonMarked">
+              <div id="buttonMarked-Circle">      
+              </div>
+          </div>
+
           <hr>
           <div id="editor-container-body">
-          <textarea class="editor-container" wrap="virtual" >
-这是一个简单的~文本域~
-写着人们心肠的曲折~
-我想我很快乐~
-当有你的温热~
-脚边的空气转了~
-
-你知道就算大雨将你的城市颠倒~
-我会给你怀抱~
-          </textarea>
+          <div id="editor-container-body-inner-visible"  contentEditable = "true"></div>
+          <div id="editor-container-body-inner-markdown"  contentEditable = "true">
+          </div>
+          </div>
           </div>
         </div>
     </div>
